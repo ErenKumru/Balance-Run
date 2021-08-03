@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
+    path: Assets/Scenes/TestScene2.unity
+    guid: 10fe1a84dd91e16499324b4ebeceed4c
+  - enabled: 1
     path: Assets/Scenes/TryDontDestryHierarchy.unity
     guid: cf5e4318188e3564396a0f4278e4ba6f
   - enabled: 1

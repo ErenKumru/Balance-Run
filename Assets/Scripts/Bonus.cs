@@ -18,8 +18,10 @@ public class Bonus : MonoBehaviour
     private void LevelComplete()
     {
         collectables.StarPoints *= bonus;
+	collectables.GemPoints *= bonus;
         uIManager.UpdateStarText(collectables.StarPoints);
         Debug.Log("Bonus : "+collectables.StarPoints);
+	Debug.Log("Diamond Points : "+collectables.GemPoints);
     }
 
     private void OnTriggerEnter(Collider other)
