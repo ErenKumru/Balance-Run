@@ -6,15 +6,18 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private InputManager inputManager;
+    private StackController stackController;
     [SerializeField] private float speed;
     [SerializeField] private float maxDistance = 2.0f;
     [SerializeField] private float smoothTime;
     [SerializeField] private float inputScale;
     private float velocity;
+    private bool isHit = false;
 
     private void Awake()
     {
         inputManager = FindObjectOfType<InputManager>();
+        stackController = FindObjectOfType<StackController>();
     }
 
     private void Update()
@@ -42,5 +45,15 @@ public class PlayerController : MonoBehaviour
         newPosition.x = Mathf.SmoothDamp(newPosition.x, newPosition.x + inputManager.input / inputScale, ref velocity, smoothTime);
         newPosition.x = Mathf.Clamp(newPosition.x, -maxDistance, maxDistance);
         transform.position = newPosition;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (!isHit)
+        {
+            isHit = true;
+            stackController.RemoveFromStack(stackController.GetStack()[0]);
+            enabled = false;
+        }
     }
 }
