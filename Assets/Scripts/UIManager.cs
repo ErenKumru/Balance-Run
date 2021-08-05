@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,18 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text starText;
     [SerializeField] private TMP_Text gemText;
-
+    [SerializeField] private TMP_Text countdownText;
     [Header("Menu Elements")]
     [SerializeField] private GameObject menuCanvas;
-
+    [SerializeField] private GameObject transitionPanel;
+    private CountdownController countdownController;
+    private InputManager inputManager;
+    
+    private void Start()
+    {
+        countdownController = FindObjectOfType<CountdownController>();
+        inputManager = FindObjectOfType<InputManager>();
+    }
 
     #region GameplayUIControls
 
@@ -38,6 +47,14 @@ public class UIManager : Singleton<UIManager>
         gemText.text = gemAmount.ToString();
     }
 
+    public void UpdateCountdownText(String time)
+    {
+        countdownText.text = time;
+    }
+    public TMP_Text GetCountdownText()
+    {
+        return countdownText;
+    }
     #endregion
 
     #region MenuUIControls
@@ -45,12 +62,24 @@ public class UIManager : Singleton<UIManager>
     public void OpenMenu()
     {
         Time.timeScale = 0;
+        if (countdownController.Equals(null))
+        {
+            countdownController = FindObjectOfType<CountdownController>();
+        }
+        inputManager.enabled = false;
+        countdownController.PauseCountdownSound();
         menuCanvas.SetActive(true);
     }
 
     public void CloseMenu()
     {
         menuCanvas.SetActive(false);
+        if (countdownController.Equals(null))
+        {
+            countdownController = FindObjectOfType<CountdownController>();
+        }
+        inputManager.enabled = true;
+        countdownController.ResumeCountdownSound();
         Time.timeScale = 1;
     }
 
@@ -73,6 +102,10 @@ public class UIManager : Singleton<UIManager>
     {
         Application.OpenURL("https://twitter.com/udogames/");
     }
-
+    public void ToggleTransitionPanel()
+    {
+        transitionPanel.SetActive(!transitionPanel.activeSelf);
+    }
+    
     #endregion
 }

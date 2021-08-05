@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class LevelManager : Singleton<LevelManager>
 {
     private int currentLevelIndex = 0;
+    private UIManager uiManager;
 
     private void Start()
     {
-        Debug.Log("startIndex: " + currentLevelIndex);
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     public int GetCurrentLevel()
@@ -19,15 +20,14 @@ public class LevelManager : Singleton<LevelManager>
 
     public void LoadCurrentLevel()
     {
-        Debug.Log("currentLevelIndex: " + currentLevelIndex);
         SceneManager.LoadScene(currentLevelIndex);
     }
 
     public void LoadNextLevel()
     {
-        Debug.Log("currentLevelIndex " + currentLevelIndex);
+        uiManager.ToggleTransitionPanel();
         currentLevelIndex++;
-        Debug.Log("next level index: " + currentLevelIndex);
         SceneManager.LoadScene(currentLevelIndex);
+        uiManager.GetCountdownText().enabled = true;
     }
 }

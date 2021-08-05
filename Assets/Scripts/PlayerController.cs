@@ -1,23 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private InputManager inputManager;
     private StackController stackController;
+    private Collider playerCollider;
     [SerializeField] private float speed;
     [SerializeField] private float maxDistance = 2.0f;
     [SerializeField] private float smoothTime;
     [SerializeField] private float inputScale;
     private float velocity;
-    private bool isHit = false;
 
     private void Awake()
     {
         inputManager = FindObjectOfType<InputManager>();
         stackController = FindObjectOfType<StackController>();
+        playerCollider = GetComponent<Collider>();
     }
 
     private void Update()
@@ -49,11 +51,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (!isHit)
+        if (stackController.GetStack().Any())
         {
-            isHit = true;
             stackController.RemoveFromStack(stackController.GetStack()[0]);
-            enabled = false;
         }
+        playerCollider.isTrigger = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        playerCollider.isTrigger = false;
     }
 }

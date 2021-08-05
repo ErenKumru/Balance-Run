@@ -9,12 +9,14 @@ public class Bonus : MonoBehaviour
     private Collectables collectables;
     [SerializeField] private int bonus;
     private PlayerController playerController;
+    private StackController stackController;
     
     private void Awake()
     {
         uIManager = FindObjectOfType<UIManager>();
         collectables = FindObjectOfType<Collectables>();
         playerController = FindObjectOfType<PlayerController>();
+        stackController = FindObjectOfType<StackController>();
     }
     
     private void LevelComplete()
@@ -23,15 +25,37 @@ public class Bonus : MonoBehaviour
         collectables.GemPoints *= bonus;
         uIManager.UpdateStarText(collectables.StarPoints);
         uIManager.UpdateGemText(collectables.GemPoints);
-        Debug.Log("Bonus : "+collectables.StarPoints);
-	    Debug.Log("Diamond Points : "+collectables.GemPoints);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Other Object : "+other.name);
         LevelComplete();
         playerController.enabled = false;
+        AnimatorControl();
+        StartCoroutine(DelayTransitionPanel());
     }
-    
+
+    private void AnimatorControl()
+    {
+        Quaternion rotation = playerController.transform.rotation;
+        rotation.y = 180;
+        playerController.transform.rotation = rotation;
+        Animator animator = playerController.GetComponent<Animator>();
+        animator.SetBool("isFinished",true);
+        List<GameObject> stack = stackController.GetStack();
+        foreach (GameObject stackable in stack)
+        {
+            rotation = stackable.transform.rotation;
+            rotation.y = 180;
+            stackable.transform.rotation = rotation;
+            animator = stackable.GetComponent<Animator>();
+            animator.SetBool("isFinished",true);
+        }
+    }
+
+    private IEnumerator DelayTransitionPanel()
+    {
+        yield return new WaitForSeconds(1f);
+        uIManager.ToggleTransitionPanel();
+    }
 }

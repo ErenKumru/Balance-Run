@@ -38,7 +38,6 @@ public class LevelInfo : MonoBehaviour
     private void CalculateLevelLength()
     {
         levelLength = finishLine.position.z - spawnPoint.position.z;
-        Debug.Log("level length: " + levelLength);
     }
 
     private void UpdateSliderValue()

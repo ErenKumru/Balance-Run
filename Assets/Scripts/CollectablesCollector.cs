@@ -15,11 +15,6 @@ public class CollectablesCollector : MonoBehaviour
         collectables = FindObjectOfType<Collectables>();
     }
 
-    private void Update()
-    {
-        transform.Rotate(90*Time.deltaTime,0,0);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         CollectItem();

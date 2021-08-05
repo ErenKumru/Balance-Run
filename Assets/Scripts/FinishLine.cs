@@ -5,10 +5,12 @@ using UnityEngine;
 public class FinishLine : MonoBehaviour
 {
     private StackController stackController;
+    private ParticleSystem[] confettis;
 
     private void Awake()
     {
         stackController = FindObjectOfType<StackController>();
+        confettis = FindObjectsOfType<ParticleSystem>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,5 +22,10 @@ public class FinishLine : MonoBehaviour
         {
             stack[i].GetComponent<Collider>().enabled = false;
         }
+        foreach (ParticleSystem confetti in confettis)
+        {
+            confetti.Play();
+        }
+        
     }
 }
