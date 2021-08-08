@@ -10,6 +10,8 @@ public class Bonus : MonoBehaviour
     [SerializeField] private int bonus;
     private PlayerController playerController;
     private StackController stackController;
+    private int stars;
+    private int gems;
     
     private void Awake()
     {
@@ -18,11 +20,19 @@ public class Bonus : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
         stackController = FindObjectOfType<StackController>();
     }
-    
+
+    private void Start()
+    {
+        stars = collectables.StarPoints;
+        gems = collectables.GemPoints;
+    }
+
     private void LevelComplete()
     {
-        collectables.StarPoints *= bonus;
-        collectables.GemPoints *= bonus;
+        stars = (collectables.StarPoints - stars) * bonus;
+        gems = (collectables.GemPoints - gems) * bonus;
+        collectables.StarPoints += stars;
+        collectables.GemPoints += gems;
         uIManager.UpdateStarText(collectables.StarPoints);
         uIManager.UpdateGemText(collectables.GemPoints);
     }

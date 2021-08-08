@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : Singleton<LevelManager>
 {
+    private int sceneCount;
     private int currentLevelIndex = 0;
     private UIManager uiManager;
 
     private void Start()
     {
         uiManager = FindObjectOfType<UIManager>();
+        sceneCount = SceneManager.sceneCountInBuildSettings;
     }
 
     public int GetCurrentLevel()
@@ -26,7 +28,7 @@ public class LevelManager : Singleton<LevelManager>
     public void LoadNextLevel()
     {
         uiManager.ToggleTransitionPanel();
-        currentLevelIndex++;
+        currentLevelIndex = (currentLevelIndex + 1) % sceneCount;
         SceneManager.LoadScene(currentLevelIndex);
         uiManager.GetCountdownText().enabled = true;
     }

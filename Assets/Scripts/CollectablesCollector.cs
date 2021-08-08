@@ -22,8 +22,6 @@ public class CollectablesCollector : MonoBehaviour
 
     private void CollectItem()
     {
-        gameObject.SetActive(false);
-
         switch (collectableItems)
         {
             case Collectable.Star:
@@ -35,6 +33,8 @@ public class CollectablesCollector : MonoBehaviour
                 uIManager.UpdateGemText(collectables.GemPoints);
                 break;
         }
+
+        gameObject.SetActive(false);
     }
 
     private enum Collectable

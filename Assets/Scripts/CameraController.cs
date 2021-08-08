@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
         distance = playerObjectTransform.position.z - transform.position.z;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         position.z = playerObjectTransform.position.z - distance;
         CameraExtender();
@@ -39,8 +39,8 @@ public class CameraController : MonoBehaviour
     private void CameraExtender()
     {
         int count = stackController.GetStack().Count;
-        float updatedY = posY + count / yMultiplier ;
-        float updatedZ = posZ - count / zMultiplier;
+        float updatedY = posY + (count + 2) / yMultiplier ;
+        float updatedZ = posZ - (count + 2) / zMultiplier;
         position.z = Mathf.SmoothStep(position.z, updatedZ, smoothTime);
         position.y = Mathf.SmoothStep(position.y, updatedY, smoothTime);
     }
