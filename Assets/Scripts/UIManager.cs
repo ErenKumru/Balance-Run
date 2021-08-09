@@ -17,7 +17,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject transitionPanel;
     private CountdownController countdownController;
     private InputManager inputManager;
-    
+
     private void Start()
     {
         countdownController = FindObjectOfType<CountdownController>();
@@ -47,7 +47,7 @@ public class UIManager : Singleton<UIManager>
         gemText.text = gemAmount.ToString();
     }
 
-    public void UpdateCountdownText(String time)
+    public void UpdateCountdownText(string time)
     {
         countdownText.text = time;
     }
@@ -105,6 +105,11 @@ public class UIManager : Singleton<UIManager>
     public void ToggleTransitionPanel()
     {
         transitionPanel.SetActive(!transitionPanel.activeSelf);
+    }
+
+    public void CloseTransitionPanel()
+    {
+        transitionPanel.SetActive(false);
     }
     
     #endregion

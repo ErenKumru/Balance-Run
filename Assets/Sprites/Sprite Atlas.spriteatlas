@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: Android
-      m_MaxTextureSize: 2048
+      m_MaxTextureSize: 1024
       m_ResizeAlgorithm: 0
       m_TextureFormat: 47
       m_TextureCompression: 1
@@ -44,19 +44,16 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 9cde2f1b3f44f5c43b8fd0399c8de931, type: 3}
-    - {fileID: 2800000, guid: 62f91531230a5b7479e08ab307de6148, type: 3}
-    - {fileID: 2800000, guid: 1e2af36e9955d3942a325f43fc289a08, type: 3}
-    - {fileID: 2800000, guid: 8707f7323191f9944bc8b9d8bed81f95, type: 3}
     - {fileID: 2800000, guid: 693358eac26d407498a3bd6e3ca4ac6b, type: 3}
-    - {fileID: 2800000, guid: 4043cf6266aabef41a53cdb96277d1f2, type: 3}
-    - {fileID: 2800000, guid: e9befdda8776c6b47ae92926422ccafa, type: 3}
+    - {fileID: 2800000, guid: 62f91531230a5b7479e08ab307de6148, type: 3}
+    - {fileID: 2800000, guid: e172132fe1d2244be9ab527153041e5a, type: 3}
+    - {fileID: 2800000, guid: 493fd7d0e626d4db091f50928058f0b8, type: 3}
+    - {fileID: 2800000, guid: a7e1e81117197488db394021a1b04920, type: 3}
+    - {fileID: 2800000, guid: 25c2d239600db471aabc8ffa640bc0ae, type: 3}
     - {fileID: 2800000, guid: 1c8431185995a43f4a7544bcb872b5db, type: 3}
     - {fileID: 2800000, guid: 2cb44f2ba74d44feaa8292079e48c93d, type: 3}
-    - {fileID: 2800000, guid: 25c2d239600db471aabc8ffa640bc0ae, type: 3}
-    - {fileID: 2800000, guid: a7e1e81117197488db394021a1b04920, type: 3}
-    - {fileID: 2800000, guid: 493fd7d0e626d4db091f50928058f0b8, type: 3}
-    - {fileID: 2800000, guid: e172132fe1d2244be9ab527153041e5a, type: 3}
-    totalSpriteSurfaceArea: 1439357
+    - {fileID: 2800000, guid: 111d4f982ceb3429b821a87e5f3cc18a, type: 3}
+    totalSpriteSurfaceArea: 826598
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -65,29 +62,23 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 493fd7d0e626d4db091f50928058f0b8, type: 3}
   - {fileID: 21300000, guid: a7e1e81117197488db394021a1b04920, type: 3}
   - {fileID: 21300000, guid: 62f91531230a5b7479e08ab307de6148, type: 3}
-  - {fileID: 21300000, guid: 8707f7323191f9944bc8b9d8bed81f95, type: 3}
-  - {fileID: 21300000, guid: 4043cf6266aabef41a53cdb96277d1f2, type: 3}
   - {fileID: 21300000, guid: 1c8431185995a43f4a7544bcb872b5db, type: 3}
+  - {fileID: 21300000, guid: 111d4f982ceb3429b821a87e5f3cc18a, type: 3}
   - {fileID: 21300000, guid: 25c2d239600db471aabc8ffa640bc0ae, type: 3}
-  - {fileID: 21300000, guid: e9befdda8776c6b47ae92926422ccafa, type: 3}
   - {fileID: 21300000, guid: 693358eac26d407498a3bd6e3ca4ac6b, type: 3}
   - {fileID: 21300000, guid: 9cde2f1b3f44f5c43b8fd0399c8de931, type: 3}
   - {fileID: 21300000, guid: 2cb44f2ba74d44feaa8292079e48c93d, type: 3}
-  - {fileID: 21300000, guid: 1e2af36e9955d3942a325f43fc289a08, type: 3}
   - {fileID: 21300000, guid: e172132fe1d2244be9ab527153041e5a, type: 3}
   m_PackedSpriteNamesToIndex:
   - SoundON
   - SoundOFF
   - Diamond Transparent
-  - Google Play Store Logo
-  - Twitter Logo
   - Cancel
+  - Restart
   - Settings
-  - Udo Logo 1
   - Star Transparent
   - checkered
   - Forward
-  - Facebook Logo
   - LazyDayBG-resized
   m_RenderDataMap: {}
   m_Tag: Sprite Atlas

@@ -6,12 +6,12 @@ public class LevelInfo : MonoBehaviour
 {
     [Header("Managers")]
     private LevelManager levelManager;
+    private UIManager uIManager;
 
     [Header("Gameplay - UI Elements")]
     private Transform finishLine;
     private Transform spawnPoint;
     private Transform playerCharacterTransform;
-    private UIManager uIManager;
 
     private float levelLength;
 
