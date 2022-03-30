@@ -11,4 +11,15 @@ Playing as a rugby team captain, players run from start to finish line and tries
 The higher the cheerleader tower becomes the harder it gets to balance the tower. Also, when passign the finish line the higher the tower gets the more points the player is rewarded.
 
 ## Multimedia
-![Balance Run 1](https://drive.google.com/file/d/10bsk4GHV_3esyASZw3pPSgjLK6KvIMlt/view?usp=sharing)
+![Balance Run 1](https://user-images.githubusercontent.com/44412775/160851743-26fe888c-24b7-41c6-8b94-5db31b52c3a1.PNG)
+![Balance Run 2](https://user-images.githubusercontent.com/44412775/160851767-64089287-f831-424a-97a3-786d8f10291f.PNG)
+![Balance Run 3](https://user-images.githubusercontent.com/44412775/160851781-711db18d-963a-45ad-bc59-400f8f195176.PNG)
+![Balance Run 4](https://user-images.githubusercontent.com/44412775/160851786-b77916c9-5106-4e3b-b891-15d48192d4bd.PNG)
+
+
+https://user-images.githubusercontent.com/44412775/160851811-770d722e-76bc-4a0a-8c7b-de22c905eebb.mp4
+
+
+
+https://user-images.githubusercontent.com/44412775/160851819-fce62745-d3ca-4d15-b320-053109f63938.mp4
+
