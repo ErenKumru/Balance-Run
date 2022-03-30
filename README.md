@@ -1,5 +1,5 @@
 # Balance-Run
-Hyper-Casual Game Project Developed by https://github.com/ErenKumru & https://github.com/munircan at UDO Games Summer Internship
+Hyper-Casual Game Project Developed by [Eren Kumru](https://github.com/ErenKumru) & [Münircan Civelek](https://github.com/munircan) at UDO Games Summer Internship
 
 # About The Project
 I was assigned to develop a hyper-casual game for mobile platforms from scratch. So, I started thinking about something new and never done before. 
